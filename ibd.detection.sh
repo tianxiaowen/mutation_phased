@@ -1,3 +1,3 @@
 #!/bin/bash
 
-## IBD detection with BEAGLE
+##shell script for iBD detection with BEAGLE
