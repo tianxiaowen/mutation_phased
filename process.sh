@@ -32,4 +32,6 @@ zcat $path/set${i}.vcf.error${rate}.gz | java -jar gtstats.jar > $path/set${i}.v
 awk -v OFS=":" '{if($14<0.1) print $1,$2}' $path/set${i}.vcf.error${rate}.gtstats > $path/exclude_markers_error${rate}
 
 ## Refined IBD using true phase
-java -Xmx20g -Xss5m -jar beagle41.16Jan17.4bc.jar gt=$path/set${i}.vcf.error${rate}.gz ibd=true impute=false excludemarkers=$path/exclude_markers_error${rate} ibdcm=1 nthreads=2 out=$path/set${i}_error${rate}_refined_truephase
+java -Xmx120g -Xss5m -jar tools/refined-ibd.12Jul18.a0b.jar gt=$path/set${i}.vcf.error${rate}.gz  excludemarkers=$path/exclude_markers_error${rate} length=1 nthreads=12 out=$path/set${i}_error${rate}_refined
+
+
