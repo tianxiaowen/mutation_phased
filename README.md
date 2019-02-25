@@ -41,10 +41,10 @@ Algorithm Parameters:
   
     [hapidA/B/C] = haplotype index 
     [chr] = chromosome index 
-    [startAB/AC/BC] = starting physical position of the IBD segment shared between AB/AC/BC<br/>
-    [endAB/AC/BC] = ending physical position of the IBD segment shared between AB/AC/BC<br/>
-    [lengthAB/AC/BC] = genetic length of the IBD segment shared between AB/AC/BC<br/>
-    [mut12-3] = first sort hapidA, hapidB, hapidC by their numeric value into ascending order: hapid1, hapid2, hapid3. Then    mut12-3 is the number of variants carried exclusively  by hapid1 and hapid2 
+    [startAB/AC/BC] = starting physical position of the IBD segment shared between AB/AC/BC
+    [endAB/AC/BC] = ending physical position of the IBD segment shared between AB/AC/BC
+    [lengthAB/AC/BC] = genetic length of the IBD segment shared between AB/AC/BC
+    [mut12-3] = hapidA, hapidB, hapidC are sorted by their numeric value into ascending order: hapid1, hapid2, hapid3.Then    mut12-3 is the number of variants carried exclusively  by hapid1 and hapid2 
     [mut13-2] = number of variants carried exclusively  by hapid1 and hapid3
     [mut23-1] = number of variants carried exclusively  by hapid2 and hapid3 
     [overlap] = the physical length of the overlapping region of three IBD segments
