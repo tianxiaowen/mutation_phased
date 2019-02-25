@@ -4,9 +4,11 @@
 
 ##### Copyright (C) 2016 Brian L. Browning
 
-usage: cat [ibd] | java -jar mutation.09Mar17.304.jar [args]
+usage: 
+  
+    cat [ibd] | java -jar mutation.09Mar17.304.jar [args]
 
-  where:
+where:
 
     [ibd]  = a space-separated list of trio-mutation files with the format specified below
     [args] = a space-separated list of algorithm parameters
@@ -30,12 +32,12 @@ Algorithm Parameters:
 
 [ibd]  = a space-separated list of trio-mutation files with the following format:
 
-[hapidA] [hapidB] [chr] [startAB] [endAB] [lengthAB] <br/>	
-[hapidA] [hapidC] [chr] [startAC] [endAC] [lengthAC] <br/>	
-[hapidB] [hapidC] [chr] [startBC] [endBC] [lengthBC] <br/>	
-12-3 	[mut12-3]	[overlap] <br/>	
-13-2	[mut13-2]	[overlap] <br/>	
-23-1	[mut23-1]	[overlap] <br/>
+[hapidA] [hapidB] [chr] [startAB] [endAB] [lengthAB] 
+[hapidA] [hapidC] [chr] [startAC] [endAC] [lengthAC] 
+[hapidB] [hapidC] [chr] [startBC] [endBC] [lengthBC] 
+12-3 	[mut12-3]	[overlap] 
+13-2	[mut13-2]	[overlap] 
+23-1	[mut23-1]	[overlap] 
   
   where:
   
@@ -44,7 +46,7 @@ Algorithm Parameters:
     [startAB/AC/BC] = starting physical position of the IBD segment shared between AB/AC/BC
     [endAB/AC/BC] = ending physical position of the IBD segment shared between AB/AC/BC
     [lengthAB/AC/BC] = genetic length of the IBD segment shared between AB/AC/BC
-    [mut12-3] = hapidA, hapidB, hapidC are sorted by their numeric value into ascending order: hapid1, hapid2, hapid3.Then mut12-3 is the number of variants carried exclusively  by hapid1 and hapid2 
+    [mut12-3] = hapidA, hapidB, hapidC are sorted by their numeric value into ascending order: hapid1, hapid2, hapid3;mut12-3 is the number of variants carried exclusively  by hapid1 and hapid2 
     [mut13-2] = number of variants carried exclusively  by hapid1 and hapid3
     [mut23-1] = number of variants carried exclusively  by hapid2 and hapid3 
     [overlap] = physical length of the overlapping region of three IBD segments
