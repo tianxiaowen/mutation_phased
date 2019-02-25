@@ -14,7 +14,7 @@ usage: cat [ibd] | java -jar mutation.09Mar17.304.jar [args]
 Algorithm Parameters:
 
     map=<PLINK-format genetic map with cM distances> 	   		 (required)
-    ne=<IBDNe .ne output file>                       			   (required)
+    ne=<IBDNe .ne output file>                       			 (required)
     out=<output file prefix>                        			   (required)
     ng1=<max generations to first coalescence>        		 	 (default=100)
     ng2=<max generations from 1st to 2nd coalescence> 			 (default=100)
