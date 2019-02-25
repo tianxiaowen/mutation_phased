@@ -55,8 +55,8 @@ Algorithm Parameters:
 [process.sh](https://github.com/tianxiaowen/mutation_phased/blob/master/process.sh) has the sequence of commands that can be used to replicate the simulated data analysis with the following steps:
 
 * Data simulation [ARGON]()
-* IBD detection
-* IBD gapfilling
-* Effective population estimtation
+* IBD detection [BEAGLE REFINED IBD]
+* IBD gapfilling []
+* Effective population estimtation [IBDNe]
 * IBD trio construction
 * Mutation rate esimtation
