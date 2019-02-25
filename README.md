@@ -6,25 +6,25 @@
 
 usage: cat [ibd] | java -jar mutation.09Mar17.304.jar [args]
 
-where:
+  where:
 
-  [ibd]  = a space-separated list of trio-mutation files with the format specified below
-  [args] = a space-separated list of algorithm parameters
+    [ibd]  = a space-separated list of trio-mutation files with the format specified below
+    [args] = a space-separated list of algorithm parameters
 
 Algorithm Parameters:
 
-  map=<PLINK-format genetic map with cM distances> 	   		 (required)
-  ne=<IBDNe .ne output file>                       			 (required)
-  out=<output file prefix>                        			 (required)
-  ng1=<max generations to first coalescence>        		 	 (default=100)
-  ng2=<max generations from 1st to 2nd coalescence> 			 (default=100)
-  mu.start=<min mutation rate>                     			 (default=1.21E-8)
-  mu.end=<max mutation rate>                       			 (default=1.29E-8)
-  mu.step=<step for grid search>                  			 (default=1.0E-10)
-  err.start=<min error rate>                        			 (default=0.0)
-  err.end=<max error rate>                          			 (default=1.0E-7)
-  err.ratio=<ratio >1 for logorithmic grid search>  			 (default=10.0)
-  nthreads=<number of threads>                     			 (default: machine-dependent)
+    map=<PLINK-format genetic map with cM distances> 	   		 (required)
+    ne=<IBDNe .ne output file>                       			   (required)
+    out=<output file prefix>                        			   (required)
+    ng1=<max generations to first coalescence>        		 	 (default=100)
+    ng2=<max generations from 1st to 2nd coalescence> 			 (default=100)
+    mu.start=<min mutation rate>                     			   (default=1.21E-8)
+    mu.end=<max mutation rate>                       			   (default=1.29E-8)
+    mu.step=<step for grid search>                  			   (default=1.0E-10)
+    err.start=<min error rate>                        			 (default=0.0)
+    err.end=<max error rate>                          			 (default=1.0E-7)
+    err.ratio=<ratio >1 for logorithmic grid search>  			 (default=10.0)
+    nthreads=<number of threads>                     			   (default: machine-dependent)
 
 
 
