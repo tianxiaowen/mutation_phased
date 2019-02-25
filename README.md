@@ -60,3 +60,5 @@ Algorithm Parameters:
 * Effective population estimtation [IBDNe](http://faculty.washington.edu/browning/ibdne.html)
 * IBD trio construction
 * Mutation rate esimtation [Mutation](https://github.com/tianxiaowen/mutation_phased/blob/master/tools/mutation.09Mar17.304.jar)
+
+Additional tools for the analysis can be found in the folder [tools](https://github.com/tianxiaowen/mutation_phased/tree/master/tools)
