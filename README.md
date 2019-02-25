@@ -1,6 +1,6 @@
 ### Mutation rate estimation from three-way IBD
 
-##### Program: mutation.09Mar17.304.jar
+##### Program: [mutation.09Mar17.304.jar](https://github.com/tianxiaowen/mutation_phased/blob/master/tools/mutation.09Mar17.304.jar)
 
 ##### Copyright (C) 2016 Brian L. Browning
 
