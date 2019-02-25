@@ -51,3 +51,5 @@ Algorithm Parameters:
     [mut13-2] = number of variants carried exclusively by hapid1 and hapid3
     [mut23-1] = number of variants carried exclusively by hapid2 and hapid3 
     [overlap] = physical length of the overlapping region of three IBD segments
+
+process.sh has the sequence of commands that can be used to replicate the simulated data analysis.
