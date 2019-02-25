@@ -1,8 +1,8 @@
-###Mutation rate estimation from three-way IBD
+### Mutation rate estimation from three-way IBD
 
-#####Program: mutation.09Mar17.304.jar
+##### Program: mutation.09Mar17.304.jar
 
-#####Copyright (C) 2016 Brian L. Browning
+##### Copyright (C) 2016 Brian L. Browning
 
 usage: cat [ibd] | java -jar mutation.09Mar17.304.jar [args]
 
