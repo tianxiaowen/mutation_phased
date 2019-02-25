@@ -7,10 +7,12 @@
 usage: cat [ibd] | java -jar mutation.09Mar17.304.jar [args]
 
 where:
+
   [ibd]  = a space-separated list of trio-mutation files with the format specified below
   [args] = a space-separated list of algorithm parameters
 
 Algorithm Parameters:
+
   map=<PLINK-format genetic map with cM distances> 	   		 (required)
   ne=<IBDNe .ne output file>                       			 (required)
   out=<output file prefix>                        			 (required)
@@ -26,7 +28,7 @@ Algorithm Parameters:
 
 
 
-[ibd]  = a space-separated list of trio-mutation files with the following format
+[ibd]  = a space-separated list of trio-mutation files with the following format:
 
 [hapidA] [hapidB] [chr] [startAB] [endAB] [lengthAB] <br/>	
 [hapidA] [hapidC] [chr] [startAC] [endAC] [lengthAC] <br/>	
@@ -36,6 +38,7 @@ Algorithm Parameters:
 23-1	[mut23-1]	[overlap] <br/>
   
   where:
+  
     [hapidA/B/C] = haplotype index <br/>
     [chr] = chromosome index <br/>
     [startAB/AC/BC] = starting physical position of the IBD segment shared between AB/AC/BC<br/>
