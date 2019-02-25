@@ -1,4 +1,4 @@
-### Mutation rate estimation from three-way IBD
+## Mutation rate estimation from three-way IBD
 
 ##### Program: [mutation.09Mar17.304.jar](https://github.com/tianxiaowen/mutation_phased/blob/master/tools/mutation.09Mar17.304.jar)
 
@@ -54,9 +54,9 @@ Algorithm Parameters:
 
 [process.sh](https://github.com/tianxiaowen/mutation_phased/blob/master/process.sh) has the sequence of commands that can be used to replicate the simulated data analysis with the following steps:
 
-* Data simulation [ARGON]()
-* IBD detection [BEAGLE REFINED IBD]()
-* IBD gapfilling []()
-* Effective population estimtation [IBDNe]()
+* Data simulation [ARGON](https://github.com/pierpal/ARGON)
+* IBD detection [Refined IBD](http://faculty.washington.edu/browning/refined-ibd.html)
+* Remove breaks and gaps in IBD segments [Merge IBD](http://faculty.washington.edu/browning/refined-ibd.html#gaps)
+* Effective population estimtation [IBDNe](http://faculty.washington.edu/browning/ibdne.html)
 * IBD trio construction
 * Mutation rate esimtation
