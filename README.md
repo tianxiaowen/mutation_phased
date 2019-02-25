@@ -58,5 +58,5 @@ Algorithm Parameters:
 * IBD detection [Refined IBD](http://faculty.washington.edu/browning/refined-ibd.html)
 * Remove breaks and gaps in IBD segments [Merge IBD](http://faculty.washington.edu/browning/refined-ibd.html#gaps)
 * Effective population estimtation [IBDNe](http://faculty.washington.edu/browning/ibdne.html)
-* IBD trio construction [IBD trios] (https://github.com/tianxiaowen/mutation_phased/blob/master/tools/findtrios.R)[mutation count](https://github.com/tianxiaowen/mutation_phased/blob/master/tools/findtriosgt.R)
+* IBD trio construction
 * Mutation rate esimtation [Mutation](https://github.com/tianxiaowen/mutation_phased/blob/master/tools/mutation.09Mar17.304.jar)
