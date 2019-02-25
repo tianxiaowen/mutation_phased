@@ -33,11 +33,11 @@ Algorithm Parameters:
 [ibd]  = a space-separated list of trio-mutation files with the following format:
 
 [hapidA] [hapidB] [chr] [startAB] [endAB] [lengthAB]<br/>
-[hapidA] [hapidC] [chr] [startAC] [endAC] [lengthAC]
-[hapidB] [hapidC] [chr] [startBC] [endBC] [lengthBC]
-12-3 	[mut12-3]	[overlap]
-13-2	[mut13-2]	[overlap]
-23-1	[mut23-1]	[overlap]
+[hapidA] [hapidC] [chr] [startAC] [endAC] [lengthAC]<br/>
+[hapidB] [hapidC] [chr] [startBC] [endBC] [lengthBC]<br/>
+12-3 	[mut12-3]	[overlap]<br/>
+13-2	[mut13-2]	[overlap]<br/>
+23-1	[mut23-1]	[overlap]<br/>
   
   where:
   
