@@ -3,7 +3,7 @@ chr <- as.numeric(arg[[1]])
 ibdname <- arg[[2]]
 outname <- arg[[3]]
 options(scipen=999)
-region<-50
+region<-100
 ibd<-read.table(ibdname,stringsAsFactor=F)
 newibd<-ibd
 newibd$V1<-ibd$V1*2+ibd$V2-2 ##hapid

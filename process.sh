@@ -3,28 +3,6 @@
 i=1
 path=simulation/sim${i}
 
-## simulation
-## sample size: 4000 haplotypes
-## effective population size: constant haploid size 20000
-## mutation rate: 1.3e-8 per basepair per generation
-## recombination rate: 1e-8
-## length: 100 Mb
-## true IBD length: 1cM
-java -jar ARGON/ARGON.0.1.jar -N 20000 -pop 1 4000 -size 100 -mut 1.3E-8 -seed $i -IBD 1.0 -out $path/set${i} -gz
-
-## format vcf file
-zcat $path/set${i}.vcf.gz|grep -v "^##"|head -1 >  $path/header
-zcat $path/set${i}.vcf.gz|grep -v "^#"|awk -v OFS='\t' '{print $1,$2,$3,"A","C"}' > $path/firstcol
-zcat $path/set${i}.vcf.gz|grep -v "^#"|cut -f6- > $path/lastcol
-(cat $path/header;
-paste -d "\t" $path/firstcol $path/lastcol|sort -k 2 -n)|python tools/adjustvcfpos.py > $path/set${i}.vcf
-rm $path/firstcol $path/lastcol $path/header $path/set${i}.vcf.gz
-gzip $path/set${i}.vcf
-
-## add errors to the data
-rate=0.0001
-zcat $path/set${i}.vcf.gz|java -jar tools/adderr.jar $rate|gzip > $path/set${i}.vcf.error${rate}.gz
-
 ## get summary statistics from vcf file
 zcat $path/set${i}.vcf.error${rate}.gz | java -jar tools/gtstats.jar > $path/set${i}.vcf.error${rate}.gtstats
 
@@ -41,14 +19,11 @@ zcat $path/set${i}_error${rate}_refined.ibd.gz | java -jar tools/merge-ibd-segme
 export PATH=/projects/browning/brwnlab/tian/python/anaconda2/bin:$PATH
 python tools/matchrefined.py $path/set${i}_error${rate}_refined.ibd.gz $path/set${i}_error${rate}_refined.merged.ibd 3 > $path/set${i}_error${rate}_refinedmatch.merged.3cM.ibd
 
-## estimate effective population size
-cat $path/set${i}_error${rate}_refined.merged.ibd | java -jar tools/ibdne.07May18.6a4.jar map=constant.map out=$path/set${i}_error${rate}_refined.merged nboots=0
-
 ## find trios
-Rscript tools/findtrios.R $i $path/set${i}_error${rate}_refinedmatch.merged.3cM.ibd $path/set${i}_error${rate}_trios.3cM.txt
+Rscript tools/findibd3.R $i $path/set${i}_error${rate}_refinedmatch.merged.3cM.ibd $path/set${i}_error${rate}_trios.3cM.txt
 
 ## get mutation counts
-## change 01 if minor allele is reference allele
+## recode the genotype so 1 is the minor allele
 ## keep markers less than 750 copies
 copy=750
 
@@ -63,10 +38,11 @@ row=$(wc -l $path/set${i}_${copy}gt_error${rate}_changed|cut -d " " -f1)
 Rscript tools/loadvcf.R $path/set${i}_${copy}gt_error${rate}_changed $row
 rm $path/set${i}_${copy}gt_error${rate}_changed
 
-Rscript tools/findtriosgt.R $path/set${i}_${copy}gt_error${rate}_changed.Rdata $path/set${i}_error${rate}_trios.3cM.txt $path/set${i}_error${rate}_trios_${copy}gt.3cM.txt
+Rscript tools/findibd3gt.R $path/set${i}_${copy}gt_error${rate}_changed.Rdata $path/set${i}_error${rate}_trios.3cM.txt $path/set${i}_error${rate}_trios_${copy}gt.3cM.txt
 
 ## remove ibd segments longer than 6cM
 Rscript tools/filtlen.R $path/set${i}_error${rate}_trios_${copy}gt.3cM.txt 6 $path/set${i}_error${rate}_trios_${copy}gt.3-6cM.txt
 
 ## get mutation rate estimtate
-cat $path/set${i}_error${rate}_trios_${copy}gt.3-6cM.txt | java -jar tools/mutation.09Mar17.304.jar ng1=300 ng2=300 mu.start=1.25E-8 mu.end=1.35E-8 mu.step=1E-10 err.start=1E-10 err.end=1E-8 err.ratio=5 map=constant.map ne=$path/set${i}_error${rate}_refined.merged.ne nthreads=12 out=$path/set${i}_error${rate}.3-6cM
+## effective populaion size is estimated using IBDNe
+cat $path/set${i}_error${rate}_trios_${copy}gt.3-6cM.txt | java -jar tools/mutation.09Mar17.304.jar ng1=300 ng2=300 mu.start=1.25E-8 mu.end=1.35E-8 mu.step=1E-10 err.start=1E-10 err.end=1E-8 err.ratio=5 map=constant.map ne=constant.ne nthreads=24 out=$path/set${i}_error${rate}.3-6cM
