@@ -25,7 +25,7 @@ while (nrow(ibd)>=3) {
   ##for id1 match
   forid1<-ibd[(ibd$V1==id1 & ibd$V2!=id2)|(ibd$V2==id1 & ibd$V1!=id2),]
   ##for id2 match
-  forid2<-ibd[(ibd$V1==id2 & ibd$V2!=id2)|(ibd$V2==id2 & ibd$V1!=id1),]
+  forid2<-ibd[(ibd$V1==id2 & ibd$V2!=id1)|(ibd$V2==id2 & ibd$V1!=id1),]
   same<-intersect(c(forid1[,1],forid1[,2]),c(forid2[,1],forid2[,2]))
   ##if nothing matches id1/id2, remove and continue
   if (length(same)>0){
